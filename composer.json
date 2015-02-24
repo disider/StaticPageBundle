@@ -1,5 +1,5 @@
 {
-  "name": "diside/static_page-bundle",
+  "name": "diside/static-page-bundle",
   "autoload": {
     "psr-0": {"Diside\\StaticPageBundle": ""}
   },
