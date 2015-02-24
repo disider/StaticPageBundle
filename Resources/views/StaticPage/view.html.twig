@@ -1,0 +1,10 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block main_content %}
+    <div class="content">
+        <h2>{{page.title|trans}}</h2>
+        <div>{{ page.content|trans|raw }}</div>
+
+    </div>
+{% endblock %}
+

@@ -1,0 +1,43 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block main_content %}
+    <div class="container">
+        <div class="page-header">
+            <h1>{{ 'static_pages.list.page_title'|trans }}</h1>
+        </div>
+
+        <div class="row">
+                <div class="pull-right">
+                    <a href="{{ path('static_page_create') }}" class="btn btn-default btn-primary">Create a new static page</a>
+                </div>
+        </div>
+
+        <div class="row">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>{{ 'static_pages.list.title'|trans }}</th>
+                    <th>{{ 'static_pages.list.address'|trans }}</th>
+                    <th>{{ 'static_pages.list.actions'|trans }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for page in pagination %}
+                    <tr>
+                        <td>{{ page.title }}</td>
+                        <td><a href="{{ path('static_page_view', { 'slug' : page.slug}) }}">{{ path('static_page_view', { 'slug' : page.slug}) }}</a></td>
+                        <td>
+                            <a href="{{ path('static_page_edit', { 'slug' : page.slug}) }}" class="btn btn-default">{{ 'static_pages.list.edit'|trans }}</a>
+                            <a href="{{ path('static_page_delete', { 'slug' : page.slug}) }}" class="btn btn-default">{{ 'static_pages.list.delete'|trans }}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <nav class="pull-right">
+                {{ knp_pagination_render(pagination) }}
+            </nav>
+        </div>
+    </div>
+{% endblock %}

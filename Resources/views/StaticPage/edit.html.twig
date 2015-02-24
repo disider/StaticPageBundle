@@ -1,0 +1,21 @@
+{% extends '::admin_base.html.twig' %}
+
+{% block main_content %}
+    {{ tinymce_init() }}
+
+    <div class="container">
+        <div class="page-header">
+            <h1>{{ 'static_pages.edit.page_title'|trans }}</h1>
+        </div>
+
+        <div class="row">
+            <form action="{{ path('static_page_edit', {'slug' : slug}) }}" method="post" novalidate="novalidate">
+                {{ form_rest(form) }}
+            </form>
+        </div>
+        <div class="row">
+            <a class="btn btn-default" href="{{ path('static_page_list') }}">{{ 'static_pages.form.back_to_list'|trans }}</a>
+        </div>
+    </div>
+{% endblock %}
+
