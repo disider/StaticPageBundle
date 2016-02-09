@@ -10,9 +10,6 @@
     }
   ],
   "require": {
-    "php": ">=5.3.0"
-  },
-  "require-dev": {
     "php": ">=5.3.3",
     "symfony/symfony": "2.6.*",
     "doctrine/orm": "~2.2,>=2.2.3",
@@ -30,7 +27,7 @@
     "stof/doctrine-extensions-bundle": "1.2.*@dev",
     "braincrafted/bootstrap-bundle": "~2.0",
     "a2lix/translation-form-bundle": "2.*@dev",
-    "stfalcon/tinymce-bundle": "0.3.*@dev"
+    "genemu/form-bundle": "2.2.*"
   },
   "config": {
     "bin-dir": "bin/"

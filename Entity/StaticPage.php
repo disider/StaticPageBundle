@@ -51,4 +51,9 @@ class StaticPage
     {
         return $this->proxyCurrentLocaleTranslation("getContent");
     }
+
+    function __toString()
+    {
+        return $this->slug;
+    }
 }

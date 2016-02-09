@@ -10,15 +10,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-/**
- * @Route("/page")
- */
+
 class StaticPageController extends Controller
 {
-    /**
-     * @Route("/view/{slug}", name="static_page_view")
-     * @Template
-     */
     public function viewAction(Request $request, $slug)
     {
         $repository = $this->get('doctrine.orm.entity_manager')->getRepository('DisideStaticPageBundle:StaticPage');
@@ -33,11 +27,6 @@ class StaticPageController extends Controller
         );
     }
 
-    /**
-     * @Route("/list", name="static_page_list")
-     * @Security("has_role('ROLE_ADMIN')")
-     * @Template
-     */
     public function listAction(Request $request)
     {
         $pageRepository = $this->get('doctrine.orm.entity_manager')->getRepository('DisideStaticPageBundle:StaticPage');
@@ -59,11 +48,6 @@ class StaticPageController extends Controller
         );
     }
 
-    /**
-     * @Route("/create", name="static_page_create")
-     * @Security("has_role('ROLE_ADMIN')")
-     * @Template
-     */
     public function createAction(Request $request)
     {
         $formProcessor = $this->get('edit_static_page_form_processor');
@@ -83,11 +67,6 @@ class StaticPageController extends Controller
         );
     }
 
-    /**
-     * @Route("/edit/{slug}", name="static_page_edit")
-     * @Security("has_role('ROLE_ADMIN')")
-     * @Template
-     */
     public function editAction(Request $request, $slug)
     {
         $repository = $this->get('doctrine.orm.entity_manager')->getRepository('DisideStaticPageBundle:StaticPage');
@@ -115,10 +94,6 @@ class StaticPageController extends Controller
         );
     }
 
-    /**
-     * @Route("/delete/{slug}", name="static_page_delete")
-     * @Security("has_role('ROLE_ADMIN')")
-     */
     public function deleteAction(Request $request, $slug)
     {
         $entityManager = $this->get('doctrine.orm.entity_manager');
